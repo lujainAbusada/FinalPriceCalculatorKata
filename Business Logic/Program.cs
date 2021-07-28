@@ -20,7 +20,7 @@ namespace PriceCalculatorKata
                 upc,
                 universal
             };
-            IDiscountCalculator discountCalculator = new AdditiveDiscountCalculator(discounts);
+            DiscountCalculator discountCalculator = new AdditiveDiscountCalculator(discounts);
             PriceCalculator priceCalculator = new PriceCalculator(Book, tax, discountCalculator, expenses, cap);
             new PurchaseReport(priceCalculator, null).PrintReport();
             Console.WriteLine("---------------------------------------------------------------------------------");

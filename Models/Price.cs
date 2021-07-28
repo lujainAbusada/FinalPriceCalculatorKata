@@ -6,21 +6,19 @@ namespace PriceCalculatorKata
 {
     class Price
     {
-        private double _amount;
-        private Currency _currency;
-
-        public double Amount { get => _amount; }
-        internal Currency Currency { get => _currency; }
+        internal double Amount { get; private set; }
+        internal Currency Currency { get; private set; }
 
         public Price(double amount, Currency currency)
         {
-            _amount = amount;
-            _currency = currency;
+            Amount = amount;
+            Currency = currency;
         }
 
-        public string Tostring()
+        override
+        public string ToString()
         {
-            return Amount +" " +Currency.Name;
+            return Amount + " " + Currency.Name;
         }
     }
 }

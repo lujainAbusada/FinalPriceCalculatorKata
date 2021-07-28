@@ -6,16 +6,13 @@ namespace PriceCalculatorKata
 {
     internal class UniversalDiscount : IDiscount
     {
-        private readonly double _amount;
-        private readonly DiscountType _type;
-
-        public double Amount { get => _amount; }
-        public DiscountType Type { get => _type; }
+        public double Amount { get; private set; }
+        public DiscountType Type { get; private set; }
 
         public UniversalDiscount(double amount, DiscountType type)
         {
-            _amount = amount;
-            _type = type;
+            Amount = amount;
+            Type = type;
         }
 
         public double CalculateDiscount(double price)

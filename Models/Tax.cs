@@ -4,7 +4,7 @@ namespace PriceCalculatorKata
 {
     internal class Tax
     {
-        private readonly double _taxRate;
+        public readonly double _taxRate;
 
         public Tax(double taxRate)
         {

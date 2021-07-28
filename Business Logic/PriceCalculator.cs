@@ -10,15 +10,15 @@ namespace PriceCalculatorKata
         private readonly Expenses _expenses;
         private readonly Cap _cap;
         private readonly Tax _tax;
-        private readonly IDiscountCalculator _discount;
+        private readonly DiscountCalculator _discount;
 
 
         internal Product PurchasedProduct { get => _purchasedProduct; }
         internal Tax Tax { get => _tax; }
         internal Expenses Expenses => _expenses;
-        internal IDiscountCalculator Discount => _discount;
+        internal DiscountCalculator Discount => _discount;
 
-        public PriceCalculator(Product product, Tax tax, IDiscountCalculator discountCalculator, Expenses expenses, Cap cap)
+        public PriceCalculator(Product product, Tax tax, DiscountCalculator discountCalculator, Expenses expenses, Cap cap)
         {
             _purchasedProduct = product;
             _tax = tax;

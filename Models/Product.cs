@@ -4,22 +4,17 @@ namespace PriceCalculatorKata
 {
     internal class Product
     {
-        private readonly string _name;
-        private readonly int _upc;
-        private readonly double _upcDiscount;
-        private readonly Price _price;
-
-        public string Name => _name;
-        public int Upc => _upc;
-        public double UpcDiscount => _upcDiscount;
-        internal Price Price => _price;
+        public string Name { get; private set; }
+        public int Upc { get; private set; }
+        public double UpcDiscount { get; private set; }
+        internal Price Price { get; private set; }
 
         public Product(string name, int upc, Price price, double upcDiscount)
         {
-            _name = name;
-            _upc = upc;
-            _price = price;
-            _upcDiscount = upcDiscount;
+            Name = name;
+            Upc = upc;
+            Price = price;
+            UpcDiscount = upcDiscount;
         }
     }
 }
