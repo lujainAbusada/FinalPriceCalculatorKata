@@ -10,17 +10,15 @@ namespace PriceCalculatorKata
         {
         }
 
-        override
-        public double CalculateDiscountsAfterTax(double price, List<IDiscount> discountsAfterTax)
+        public override double CalculateDiscountsAfterTax(double price, List<IDiscount> discountsAfterTax)
         {
             var deducedAmountAfterTax = 0.0;
-            foreach (IDiscount Discount in discountsAfterTax)
-                deducedAmountAfterTax += Discount.CalculateDiscount(price);
+            foreach (IDiscount discount in discountsAfterTax)
+                deducedAmountAfterTax += discount.CalculateDiscount(price);
             return deducedAmountAfterTax;
         }
 
-        override
-        public double CalculateDiscountsBeforeTax(double price, List<IDiscount> discountsBeforeTax)
+        public override double CalculateDiscountsBeforeTax(double price, List<IDiscount> discountsBeforeTax)
         {
             var deducedAmountBeforeTax = 0.0;
             foreach (IDiscount discount in discountsBeforeTax)
